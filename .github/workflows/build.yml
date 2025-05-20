@@ -6,11 +6,13 @@ on:
       - main
       - dev
       - feature*
+      - master
   pull_request:
     branches:
       - main
       - dev
       - feature*
+      - master
 
 jobs:
   build:
@@ -32,7 +34,7 @@ jobs:
     - name: Build and Compile
       run: |
         cd src
-        python build.py -c -ninja
+        python build.py -c -ninja ws63-liteos-app
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
